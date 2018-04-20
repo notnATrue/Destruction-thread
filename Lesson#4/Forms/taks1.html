@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Forms Task 1</title>
+  <script>
+    
+  window.onload = function(event){
+    event.preventDefault();
+
+    var global = {
+
+      box:[],
+
+    }
+    
+    function getElements(){
+        global.name = array[0];
+        global.pass = array[1];
+        global.pass2 = array[2];
+        console.log(global.name);
+        }
+
+    var redform = function(target){
+        // console.log(target);
+        // target.className = "error";
+      }
+      
+    var greenform = function(){
+
+    }
+  
+
+        
+      
+
+    
+      var form = document.getElementById('MyValidateForm');
+      var array = Array.from(form.elements);
+      
+      var submit = document.getElementById('submit');
+      submit.addEventListener('click', getElements(array));
+       
+      
+}
+    
+   // submit.addEventListener('click', builder);
+   // var form = document.getElementsByName('');
+    //var keys = form.keys();
+   // console.log(keys);
+    
+   // form.forEach(checkbox.getter());
+  
+  
+  //   var loginform = document.getElementById('MyValidateForm');
+  //   var array = Array.from(loginform.elements);
+    
+  //   var submit = document.getElementById('submit');
+  //   submit.setAttribute('disabled', 'true');
+    
+  //   var box = document.getElementById('agree');
+  //   box.addEventListener('change' , function(){
+  //     if(forms.box.checked = true){
+  //     forms.submit.disabled = false;
+  //     } 
+  //   });
+    
+  //   var forms = {
+  //     name:array[0],
+  //     pas1:array[1],
+  //     pas2:array[2],
+  //     box:array[3],
+  //     submit:array[4],
+      
+      
+  //     green: function(target){
+  //       target.classList = "OK";
+  //       return;
+  //     },
+  //     red: function(target){
+  //       target.classList = "error";
+  //       return;
+  //     },
+  //     defColor: function(){
+  //      
+  //       this.name.classList = "";
+  //       this.pas1.classList = "";
+  //       this.pas2.classList = "";
+  //     }
+  //   };
+
+  //   function setdefault(){
+  //     forms.submit.disabled = true;
+  //     forms.box.checked = false;
+  //     forms.name.value = "";
+  //     forms.pas1.value = "";
+  //     forms.pas2.value = "";
+  //   }
+
+  // var validation = function(e){
+  //   e.preventDefault();
+  //   emptyForms();
+        
+  //   function emptyForms(){
+  //     forms.defColor();
+  //     if(forms.name.value === "" || forms.pas1.value === "" || forms.pas2.value === ""){
+  //       array.forEach(function(x){
+  //         if(x.value===""){
+  //           forms.red(x);
+  //         }
+  //       });
+  //     declineLogin("Declined : Empty forms are not allowed");
+  //     } else {
+  //       passwordCheck();
+  //       }
+  //   }
+  
+  //   function passwordCheck(){
+  //     forms.defColor();
+  //       if (forms.pas1.value !== forms.pas2.value){
+  //         declineLogin('Declined : Password not matches');
+  //         forms.red(forms.pas1);
+  //         forms.red(forms.pas2);
+  //         } else {
+  //         forms.green(forms.pas1);
+  //         forms.green(forms.pas2);
+  //         forms.green(forms.name);
+  //         loggedIn();
+  //       }
+  //   }
+    
+  //   function declineLogin(e){
+  //     console.error(e);
+  //   } 
+  //   function loggedIn(){
+
+  //     console.log('Welcome ' + forms.name.value);
+  //   }
+  //   setdefault();
+  //   // random();
+  //   }
+  //   submit.addEventListener('click' , validation);
+ 
+
+
+
+
+  // function random(){
+  //   var x = Math.round(Math.random(4));
+  //   console.log(x);
+  //   if (x === 0){
+  //     forms.elements.forEach(function(t){
+  //       let itStart = t.value;
+  //       console.log(forms);
+  //     });
+  //   }
+  // }
+  //   
+    //   Задание:
+    //     Сделать валидацию формы:
+    //     1. Логин / Пароль не может быть пустым
+    //     2. Пароли должны совпадть
+    //     3. Пока не стоит что юзер согласен с лиц. соглашением - кнопка отправки не активна
+
+    //     + бонус - то поле, которое не прошло валидацию подсвечивать красным.
+    //             - которое прошло - подсвечивать зеленым.
+    // */
+
+
+    
+  </script>
+</head>
+<body>
+
+  <center><form  id="MyValidateForm">
+    <input type="text" name='login' placeholder="Ваш логин" />
+    <input type="password" name='pas1' placeholder="Ваш пароль" />
+    <input type="password" name='pas2' placeholder="Повторите пароль" />
+    <label for="agree">
+      <span>Вы согласны с лицензионым соглашением.</span>
+      <input name="Checkbox" type="checkbox" id="agree"  />
+    </label>
+    <input type="submit" id="submit" value="Отправить"/>
+  </form></center>
+
+  <style>
+    #MyValidateForm{
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #MyValidateForm input{
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      padding: 10px 20px;
+    }
+    .error{
+        border: 1px solid red;
+    }
+    .OK{
+        border: 1px solid green;
+    }
+  </style>
+</body>
+</html>
